@@ -1,108 +1,108 @@
 const PYRAMID = [
   [{
-      reps: 8,
-      percentOfMax: 75
-    },
-    {
-      reps: 6,
-      percentOfMax: 85
-    },
-    {
-      reps: 1,
-      percentOfMax: 95
-    },
-    {
-      reps: 6,
-      percentOfMax: 85
-    },
-    {
-      reps: 8,
-      percentOfMax: 75
-    },
+    reps: 8,
+    percentOfMax: 75
+  },
+  {
+    reps: 6,
+    percentOfMax: 85
+  },
+  {
+    reps: 1,
+    percentOfMax: 95
+  },
+  {
+    reps: 6,
+    percentOfMax: 85
+  },
+  {
+    reps: 8,
+    percentOfMax: 75
+  },
   ],
   [{
-      reps: 3,
-      percentOfMax: 90
-    },
-    {
-      reps: 6,
-      percentOfMax: 80
-    },
-    {
-      reps: 8,
-      percentOfMax: 70
-    },
-    {
-      reps: 6,
-      percentOfMax: 80
-    },
-    {
-      reps: 3,
-      percentOfMax: 90
-    },
+    reps: 3,
+    percentOfMax: 90
+  },
+  {
+    reps: 6,
+    percentOfMax: 80
+  },
+  {
+    reps: 8,
+    percentOfMax: 70
+  },
+  {
+    reps: 6,
+    percentOfMax: 80
+  },
+  {
+    reps: 3,
+    percentOfMax: 90
+  },
   ],
   [{
-      reps: 8,
-      percentOfMax: 70
-    },
-    {
-      reps: 6,
-      percentOfMax: 80
-    },
-    {
-      reps: 4,
-      percentOfMax: 90
-    },
-    {
-      reps: 1,
-      percentOfMax: 99
-    },
-    {
-      reps: 4,
-      percentOfMax: 90
-    },
-    {
-      reps: 6,
-      percentOfMax: 80
-    },
-    {
-      reps: 8,
-      percentOfMax: 70
-    },
+    reps: 8,
+    percentOfMax: 70
+  },
+  {
+    reps: 6,
+    percentOfMax: 80
+  },
+  {
+    reps: 4,
+    percentOfMax: 90
+  },
+  {
+    reps: 1,
+    percentOfMax: 99
+  },
+  {
+    reps: 4,
+    percentOfMax: 90
+  },
+  {
+    reps: 6,
+    percentOfMax: 80
+  },
+  {
+    reps: 8,
+    percentOfMax: 70
+  },
   ],
   [{
-      reps: 2,
-      percentOfMax: 95
-    },
-    {
-      reps: 4,
-      percentOfMax: 85
-    },
-    {
-      reps: 6,
-      percentOfMax: 75
-    },
-    {
-      reps: 8,
-      percentOfMax: 65
-    },
-    {
-      reps: 6,
-      percentOfMax: 75
-    },
-    {
-      reps: 4,
-      percentOfMax: 85
-    },
-    {
-      reps: 2,
-      percentOfMax: 95
-    },
+    reps: 2,
+    percentOfMax: 95
+  },
+  {
+    reps: 4,
+    percentOfMax: 85
+  },
+  {
+    reps: 6,
+    percentOfMax: 75
+  },
+  {
+    reps: 8,
+    percentOfMax: 65
+  },
+  {
+    reps: 6,
+    percentOfMax: 75
+  },
+  {
+    reps: 4,
+    percentOfMax: 85
+  },
+  {
+    reps: 2,
+    percentOfMax: 95
+  },
   ]
 ]
 
-$(document).ready(function() {
-  $('#max-input').change(function(e) {
+$(document).ready(function () {
+  $('#max-input').change(function (e) {
     // Get max from input
     const max = Math.floor(e.currentTarget.value)
 
@@ -126,7 +126,8 @@ $(document).ready(function() {
 
     for (let row of PYRAMID[week]) {
       const weight = Math.floor(max * (row.percentOfMax / 100))
-      htmlRows += `<tr><td class="has-text-centered">${row.reps}</td><td class="has-text-centered">${weight}</td></tr>`
+      const weightRoundedDown = weight - (weight % 5)
+      htmlRows += `<tr><td class="has-text-centered">${row.reps}</td><td class="has-text-centered">${weightRoundedDown}</td></tr>`
     }
 
     return `
