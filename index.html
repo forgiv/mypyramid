@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MyPyramid</title>
+
+  <script
+			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+</head>
+
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          MyPyramid
+        </h1>
+        <h2 class="subtitle">
+          Quickly generate your 4 week pyramid.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <label for="max-input" class="label">Input your max below to generate your 4 week pyramid.</label>
+      <input id="max-input" class="input" type="number" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content has-text-centered" id="tables-container"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        Based on pyramid chart found on <a target="_blank"
+          href="https://www.stack.com/a/bench-press-pyramid-workout">stack fitness</a>.
+      </p>
+      <p>Copyright 2019 Hiram Cruz</p>
+    </div>
+  </footer>
+
+  <script src="./main.js" defer></script>
+</body>
+
+</html>
